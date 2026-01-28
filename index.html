@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>오늘의 랜덤 이미지</title>
+  <title>오늘 낚은 물고기는?</title>
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif;
@@ -14,7 +14,7 @@
       font-size: 16px;
       border: none;
       border-radius: 10px;
-      background: #03c75a;
+      background: #9ABF62;
       color: #fff;
       cursor: pointer;
     }
@@ -37,8 +37,8 @@
 </head>
 <body>
 
-  <h2>🎲 오늘의 랜덤 이미지</h2>
-  <button onclick="pickRandom()">눌러보세요</button>
+  <h2>🐟오늘 낚은 물고기는?</h2>
+  <button onclick="pickRandom()">낚시하기</button>
 
   <div id="result">
     <img id="image" src="" alt="">
@@ -48,8 +48,8 @@
   <script>
     const items = [
       {
-        img: "https://via.placeholder.com/400x300?text=Image+1",
-        text: "오늘은 뭔가 잘 풀릴 것 같은 날!"
+        img: "https://imgur.com/a/JhXKYhd",
+        text: "옐로우 퍼치를 잡았다!"
       },
       {
         img: "https://via.placeholder.com/400x300?text=Image+2",
