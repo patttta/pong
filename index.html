@@ -42,20 +42,54 @@
       font-size: 12px;
       color: #8D7860;
     }
+    .random-wrap {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: wrap; /* 모바일 대응 */
+    }
+
+.random-box {
+  width: 100%;
+  max-width: 420px;
+}
   </style>
 </head>
 <body>
 
-  <h2>🐟오늘 낚은 물고기는?</h2>
-  <button onclick="pickRandom()">낚시하기</button>
+  <h2></h2>
+<div class="random-wrap">
 
-  <div id="result">
-    <img id="image" src="" alt="">
-    <div id="text"></div>
+  <div class="random-box">
+    <h2>🐟오늘 낚은 물고기는?</h2>
+    <button onclick="pickRandom(itemsA, 'imageA', 'textA')">낚시하기</button>
+    <div class="result">
+      <img id="imageA" src="">
+      <div id="textA"></div>
+    </div>
   </div>
 
+  <div class="random-box">
+    <h2>🍎오늘 채집한 것은?</h2>
+    <button onclick="pickRandom(itemsB, 'imageB', 'textB')">채집하기</button>
+    <div class="result">
+      <img id="imageB" src="">
+      <div id="textB"></div>
+    </div>
+  </div>
+
+</div>
+
+
   <script>
-    const items = [
+
+    function pickRandom(items, imageId, textId) {
+    const i = Math.floor(Math.random() * items.length);
+    document.getElementById(imageId).src = items[i].img;
+    document.getElementById(textId).innerText = items[i].text;
+  }
+    const itemsA = [
       { img: "https://i.imgur.com/bIymehF.png", text: "옐로우 퍼치를 잡았다!" },
       { img: "https://i.imgur.com/ObKjqAV.png", text: "가시복어를 낚았다!" },
       { img: "https://i.imgur.com/FvBvCoC.png", text: "가오리를 낚았다!" },
@@ -87,14 +121,40 @@
       { img: "https://i.imgur.com/TRhKF7t.png", text: "흑기흉상어를 낚았다!" },
       { img: "https://i.imgur.com/ZWXsHIU.png", text: "흰동가리를 낚았다!" }
     ];
-
-    function pickRandom() {
-      const randomIndex = Math.floor(Math.random() * items.length);
-      const selected = items[randomIndex];
-
-      document.getElementById("image").src = selected.img;
-      document.getElementById("text").innerText = selected.text;
-    }
+    
+    const itemsB = [
+      { img: "https://i.imgur.com/eAsB5V8.png", text: "가지를 얻었다!" },
+      { img: "https://i.imgur.com/B6BaNWY.png", text: "감자를 얻었다!" },
+      { img: "https://i.imgur.com/ODMkFQw.png", text: "고구마를 얻었다!" },
+      { img: "https://i.imgur.com/6PQxFOi.png", text: "당근을 얻었다!" },
+      { img: "https://i.imgur.com/D9xmt2S.png", text: "도토리를 얻었다!" },
+      { img: "https://i.imgur.com/vCdaPTi.png", text: "돌을 얻었다!" },
+      { img: "https://i.imgur.com/DVYwf3H.png", text: "딸기를 얻었다!" },
+      { img: "https://i.imgur.com/cGRWIkp.png", text: "라임을 얻었다!" },
+      { img: "https://i.imgur.com/MFsDCCL.png", text: "레몬을 얻었다!" },
+      { img: "https://i.imgur.com/sS63Ut8.png", text: "별모래를 얻었다!" },
+      { img: "https://i.imgur.com/IYRYHP4.png", text: "목재를 얻었다!" },
+      { img: "https://i.imgur.com/D3Q82qO.png", text: "무를 얻었다!" },
+      { img: "https://i.imgur.com/Cfx0x52.png", text: "밤을 얻었다!" },
+      { img: "https://i.imgur.com/JoKTkhZ.png", text: "비트를 얻었다!" },
+      { img: "https://i.imgur.com/FKmbtgk.png", text: "사과를 얻었다!" },
+      { img: "https://i.imgur.com/iF52gHF.png", text: "순무를 얻었다!" },
+      { img: "https://i.imgur.com/UZQEhqJ.png", text: "아몬드를 얻었다!" },
+      { img: "https://i.imgur.com/AarLq5N.png", text: "양파를 얻었다!" },
+      { img: "https://i.imgur.com/GZlERWy.png", text: "와사비를 얻었다!" },
+      { img: "https://i.imgur.com/fAZDmY3.png", text: "완두콩을 얻었다!" },
+      { img: "https://i.imgur.com/P5SL6ps.png", text: "우엉을 얻었다!" },
+      { img: "https://i.imgur.com/tOYsOH0.png", text: "유자를 얻었다!" },
+      { img: "https://i.imgur.com/hG25WCn.png", text: "인삼을 얻었다!" },
+      { img: "https://i.imgur.com/pVEffG6.png", text: "체리를 얻었다!" },
+      { img: "https://i.imgur.com/2bwyJOA.png", text: "코코넛을 얻었다!" },
+      { img: "https://i.imgur.com/c9KszeU.png", text: "트러플을 얻었다!" },
+      { img: "https://i.imgur.com/xzJbJ0L.png", text: "파프리카를 얻었다!" },
+      { img: "https://i.imgur.com/8QTFWDY.png", text: "해바라기씨를 얻었다!" },
+      { img: "https://i.imgur.com/8AWfCnt.png", text: "단호박을 얻었다!" },
+      { img: "https://i.imgur.com/OJKXN21.png", text: "방울토마토를 얻었다!" }
+    ];
+    
   </script>
 <footer>
   © Pong PocoPoco Project
