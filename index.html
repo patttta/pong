@@ -20,11 +20,24 @@
       font-size: 20px;
       border: none;
       border-radius: 15px;
-      background: #9ABF62;
       color: #fff;
       cursor: pointer;
        margin-bottom: 20px;
     }
+    .btn-fish {
+  background: #9ABF62;
+}
+
+.btn-gather {
+  background: #FFE18E;
+}
+
+/* 비활성화 상태 */
+button:disabled {
+  background: #FA8B60;
+  cursor: not-allowed;
+  opacity: 0.8;
+}
 
     button:hover {
       opacity: 0.9;
@@ -78,6 +91,24 @@
       font-size: 12px;
       color: #8D7860;
     }
+
+    @keyframes pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pop {
+  animation: pop 0.35s ease-out;
+}
   </style>
 </head>
 
@@ -87,8 +118,9 @@
 
     <div class="random-box">
       <h2>🐟 오늘 낚은 물고기는?</h2>
-      <button onclick="pickRandom(itemsA, 'imageA', 'textA')">낚시하기</button>
-
+      <button class="btn-fish" onclick="pickRandom(itemsA, 'imageA', 'textA')">
+        낚시하기
+      </button>
       <div class="result">
         <div class="image-box">
           <img id="imageA" src="">
@@ -99,8 +131,9 @@
 
     <div class="random-box">
       <h2>🍎 오늘 채집한 것은?</h2>
-      <button onclick="pickRandom(itemsB, 'imageB', 'textB')">채집하기</button>
-
+      <button class="btn-gather" onclick="pickRandom(itemsB, 'imageB', 'textB')">
+        채집하기
+      </button>
       <div class="result">
         <div class="image-box">
           <img id="imageB" src="">
