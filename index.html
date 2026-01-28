@@ -49,6 +49,21 @@
       align-items: flex-start;
       flex-wrap: wrap; /* 모바일 대응 */
     }
+    .image-box {
+  width: 100%;
+  height: 260px;          /* ← 이 높이를 고정 */
+  display: flex;
+  align-items: center;    /* 세로 가운데 */
+  justify-content: center;/* 가로 가운데 */
+  overflow: hidden;
+}
+
+.image-box img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;    /* 이미지 비율 유지 */
+}
+
 
 .random-box {
   width: 100%;
@@ -65,8 +80,11 @@
     <h2>🐟오늘 낚은 물고기는?</h2>
     <button onclick="pickRandom(itemsA, 'imageA', 'textA')">낚시하기</button>
     <div class="result">
-      <img id="imageA" src="">
-      <div id="textA"></div>
+      <div class="image-box">
+        <img id="imageA" src="">
+      </div>
+    <div id="textA"></div>
+
     </div>
   </div>
 
@@ -74,8 +92,11 @@
     <h2>🍎오늘 채집한 것은?</h2>
     <button onclick="pickRandom(itemsB, 'imageB', 'textB')">채집하기</button>
     <div class="result">
-      <img id="imageB" src="">
-      <div id="textB"></div>
+      <div class="image-box">
+        <img id="imageB" src="">
+      </div>
+    <div id="textB"></div>
+
     </div>
   </div>
 
